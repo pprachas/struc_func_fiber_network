@@ -1,0 +1,55 @@
+# Set all colors to grayscale
+# Note: strings of float values are interpreted by matplotlib as gray values.
+
+
+lines.color: black
+lines.markersize : 8.0
+
+patch.facecolor: white
+patch.edgecolor: black
+
+text.color: black
+
+axes.facecolor: white
+axes.edgecolor: black
+axes.labelcolor: black
+# black to light gray
+#axes.prop_cycle: cycler('color', ['0.00', '0.40', '0.60', '0.70','0.9'])
+#axes.prop_cycle: cycler('color', ['0.00','0.7'])
+#axes.prop_cycle: (cycler(color=[(0.3,0.3,0.3),(0.5,0.0,0.0),(0.9,0.5,0.5)]) * cycler('marker',['s','o','^']))
+axes.prop_cycle: cycler(color=[(0.0,0.0,0.0), (0.5,0.5,0.5), (0.9,0.5,0.5), (0.5,0.0,0.0)])
+
+lines.linewidth: 1.75
+# 
+text.usetex: True
+text.latex.preamble: \usepackage{xfrac} \usepackage{amsmath}
+# ps.usedistiller: xpdf
+
+font.size: 12.0
+axes.titlesize : 12
+axes.labelsize : 10
+xtick.labelsize :10
+ytick.labelsize : 10
+
+font.family        : serif
+font.serif: Times New Roman
+
+xtick.color: black
+ytick.color: black
+
+grid.color: (.5,.5,.5)
+grid.linewidth: .1
+grid.linestyle: :
+
+
+figure.facecolor: 0.75
+figure.edgecolor: white
+
+#image.cmap: gray
+
+axes.grid: False
+axes.unicode_minus  : False
+
+
+savefig.facecolor: white
+savefig.edgecolor: white
