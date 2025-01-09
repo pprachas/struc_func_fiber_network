@@ -21,14 +21,24 @@ In brief, this work links the local geometric structure of random fiber networks
 
 ## Dependencies <a name="dependencies"></a>
 Main dependencies of the project:
-Pyhton 3.11.0
-Numpy 1.24.2
-Pandas 2.1.1
-fenics 2019.1.0 (i.e. fenics legacy)
 
-For convenience, we provided an ``environment.yml`` file that we sued on run our code. [Instructions on how to use a conda environment file can be found here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file). 
+* Python 3.11.0
+* Numpy 1.24.2
+* Pandas 2.1.1
+* fenics 2019.1.0 (i.e. fenics legacy)
+
+For convenience, we provided an ``environment.yml`` file that we used on run our code. 
+
+To create a new environment with the ``environment.yml`` file use:
+
+```
+conda env create -f environment.yml
+```
+
+[Additional instructions on how to use a conda environment file can be found here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file). 
 
 ## Directories <a name="directories"></a>
+
 
 ## References <a name="reference"></a>
 
