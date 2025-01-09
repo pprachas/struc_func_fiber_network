@@ -38,10 +38,15 @@ conda env create -f environment.yml
 [Additional instructions on how to use a conda environment file can be found here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file). 
 
 ## Directories <a name="directories"></a>
-
+Brief description of all the directories in this repository. Additional details on the code will be described in the individual readmes in the directory.
+|Directory| Description|
+----------|----------
+|fiber_networks/voronoi|scripts to mesh, run and plot FEA results for single fiber chains; code for analytical model|
+|simple_chain|scripts to mesh, run and plot FEA results for fiber networks; code for spatial grpah conversion and analysis;code analytical model|
+|utils|contains the bulk of the funcstions used in this work for for meshing, FEA, and graph analysis|
 
 ## References <a name="reference"></a>
-
+Preprint coming soon!
   
 
 
