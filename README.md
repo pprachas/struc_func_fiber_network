@@ -3,6 +3,7 @@
 [![python](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
 
 ## Table of Contents
+![abstract](abstract.png)
 
 * [Project Background and Summary](#summary)
 * [Depedencies](#dependencies)
@@ -10,6 +11,7 @@
 * [References](#reference)
 
 ## Project Background and Summary <a name="summary"></a>
+
 This code repository accompanies our paper "Towards understanding structure-function relationships in random fiber networks" publication (link to preprint coming soon!)
 
 In brief, this work links the local geometric structure of random fiber networks to their emergent mechanical behavior though the network's distance-weighted shortest paths. We first investigated the structure-function relatipship of single fiber chains, before translating the information we obtaimed from single fiber chains to random fiber networks by interpreting the distance-weighted shortest paths as chains in parallel. This repository contains the code used to reproduce the all work. This includes the finite element model, spatial grpah anaylsis and analytical model. 
