@@ -1,3 +1,4 @@
+/fiber_networks/mikado/
 *.pdf
 *.png
 *.xdmf
@@ -6,5 +7,3 @@
 *txt
 *.csv
 *.gif
-/fiber_networks/mikado/
-/fiber_networks/mikado/*.py
