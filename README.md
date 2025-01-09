@@ -3,7 +3,10 @@
 [![python](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
 
 ## Table of Contents
-![abstract](abstract.png)
+
+<p align="center">
+  <img src="abstract.png" alt="Abstract"/>
+</p>
 
 * [Project Background and Summary](#summary)
 * [Depedencies](#dependencies)
