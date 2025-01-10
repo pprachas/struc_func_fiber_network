@@ -4,9 +4,7 @@ from ufl import Jacobian, diag, sign
 import matplotlib.pyplot as plt
 import copy
 '''
-This is the main script to fun FEniCS simulations of fiber networks with Simo-Reissner beams.
-The network will be clamped (constrained displacement and rotation) at the top and bottom.
-The top will have prescribed non-zero displacement.
+This is the main script to fun FEniCS simulations of fiber networks with Simo-Reissner beams with hybrid elements.
 '''
 
 def read_mesh(f_name):
