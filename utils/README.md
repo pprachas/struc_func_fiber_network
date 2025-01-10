@@ -13,7 +13,7 @@ The main code file for our FEA analysis, this includes regularzation (also refer
 More details inputs and outputs of these functions can be found in the code.
 
 ## graph.py
-Code to generate graphs of single fiber chains and random fiber networks. 
+Functions to generate graphs of single fiber chains and random fiber networks. Details of inputs and outputs can be found inthe the file and are self-explainatory.
 
 ## meshing.py
-Code to mesh single fiber chains and random fiber networks with prescribed number of elements per fiber.
+Functions to mesh single fiber chains and random fiber networks with prescribed number of elements per fiber. Details of inputs and outputs can be found inthe the file and are self-explainatory.
