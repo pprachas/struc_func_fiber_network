@@ -45,6 +45,8 @@ Brief description of all the directories in this repository. Additional details 
 |simple_chain|scripts to mesh, run and plot FEA results for fiber networks; code for spatial grpah conversion and analysis;code analytical model|
 |utils|contains the bulk of the funcstions used in this work for for meshing, FEA, and graph analysis|
 
+Note that all the mesh files, results txt files and figures are removed in this repository but can be regenerated with the provided code.
+
 ## References <a name="reference"></a>
 Preprint coming soon!
   
