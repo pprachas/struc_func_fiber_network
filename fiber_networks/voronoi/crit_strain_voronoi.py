@@ -50,8 +50,6 @@ init_contour= np.sum(edge_dist)
 L_char = np.mean(edge_dist)
 r = 2*L_char*np.sqrt(kappa_tilde)
 
-generate_network(W,H,n,seed,num_segments,mesh_threshold)
-
 step_size = L/1000.
 crit_strain, diff_energy = fea.run_critical_strain(mesh_name, r, L, step_size, ['r','r'], abs_tol = 1e-10, rel_tol = 1e-12, init_c0 = 1e-7, max_damping_res = max_res)
 print(crit_strain)
