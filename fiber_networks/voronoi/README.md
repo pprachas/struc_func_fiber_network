@@ -19,6 +19,7 @@ Note that bash scripts to run jobs in bulk are also provided for convenience.
 |Directory|Description|
 ----------|------------
 |``plots``|Directory for code generating results plots|
+
 Additional information on code in on plots can be found in ``plot`` directory.
 
 
