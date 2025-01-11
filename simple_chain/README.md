@@ -1,6 +1,11 @@
 # simple_chain Directory
 This directory contains code for analysis of single fiber chains. The code here is used to generate plots in our publication, but the exact format (i.e. locations of texts and legends) might be slightly different due to modifications done in Adobe Illustrator.
 
+## List of code files
+|File Name|Description|
+----------|------------
+|generate_simple_chain.py|Creates the mesh and graph for all single fiber chains used in this work|
+
 ## List of Directories
 |Directory|Description|
 ----------|------------
@@ -19,5 +24,7 @@ For all directories containing FEA analysis the files are arranged as:
 |``run_xx.py``|Scripts to create directories and files to perform parameter sweep and save critical strain transition|
 
 Additional information on code in on plots can be found in ``plot`` directory.
+
+
 
 
