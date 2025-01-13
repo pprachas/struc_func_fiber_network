@@ -13,7 +13,21 @@ This directory contains code for analysis of our random fiber networks based on 
 |``run_crit_strain.py``|Scripts to create directories and files to perform parameter sweep and save critical strain transition|
 |``run_fea_voronoi.py``|Scripts to create directories and files to perform parameter sweep and save FEA results|
 
+All the parameters in ``fea_voronoi.py`` and ``crit_strain_voronoi.py`` are the default ones. Some networks need different parameteres to converge. Those networks and parameters are:
+
+|Network|Parameters|
+--------|-----------
+|n = 300, seed 17, kappa = 1e-5|init_c0 = 1e-6|
+|n = 300, seed 17, kappa = 1e-6|init_c0 = 1e-6|
+|n = 300 seed 1, kappa = 1e-4|init_c0 = 1e-6|
+|n = 200 seed 9, kappa = 1e-6|init_c0 = 1e-5|
+|n = 500 seed 6, kappa = 1e-6|init_c0 = 1e-5|
+
+Note that the set of parameters to obtain convergence is not unique, but there are the ones that are used to obtain results in for our work.
+
 Note that bash scripts to run jobs in bulk are also provided for convenience.
+
+
 
 ## List of Directories
 |Directory|Description|
