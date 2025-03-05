@@ -19,7 +19,7 @@ n_voronoi = [100,200,300,400,500] # number of seed
 L = 10000 # total length of fiber
 W=H=L
 mesh_threshold= 0 
-num_segments = 20
+num_segments = 15
 
 crit_strain_all = []
 init_contour = []
