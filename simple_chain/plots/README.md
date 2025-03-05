@@ -14,4 +14,4 @@ All the code here are used to reproduce the results in Results section for singl
 |plot_mesh_refinement.py|plot results of mesh refinements|
 
 # List of directories
-The directories here differentiate the tyoes of chain, but all contains the visual comparision of the force-displacement curve from FEA and analytical solution.
+The directories here differentiate the types of chain, but all contains the visual comparision of the force-displacement curve from FEA and analytical solution.

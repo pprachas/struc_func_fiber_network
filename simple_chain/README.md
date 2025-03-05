@@ -22,6 +22,10 @@ For all directories containing FEA analysis the files are arranged as:
 |``run_fea_xx.py``|Scripts to create directories and files to perform parameter sweep and save FEA results|
 |``xx.py``|Runs bisection solver and outputs critical strain transition point |
 |``run_xx.py``|Scripts to create directories and files to perform parameter sweep and save critical strain transition|
+|``simulate_xx.py``|Runs finite element solver and save results|
+where ``xx`` depends on the type of chain.
+
+Note that bash scripts to run jobs in bulk are also provided for convenience.
 
 Additional information on code in on plots can be found in ``plot`` directory.
 

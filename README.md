@@ -48,7 +48,14 @@ Brief description of all the directories in this repository. Additional details 
 Note that all the mesh files, results txt files and figures are removed in this repository but can be regenerated with the provided code.
 
 ## References <a name="reference"></a>
-Preprint coming soon!
+```
+@article{prachaseree2025towards,
+  title={Towards understanding structure-function relationships in random fiber networks},
+  author={Prachaseree, Peerasait and Lejeune, Emma},
+  journal={arXiv preprint arXiv:2501.06958},
+  year={2025}
+}
+```
   
 
 
