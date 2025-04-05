@@ -164,3 +164,57 @@ def create_network_mesh(folder, f_name, mesh_points, char_length, edge_dist,mean
     fiber = meshio.Mesh(points=mesh.points, cells={"line": line_cells}, cell_data={'fibers':[line_data]})
     meshio.write(f'{root_dir}/mesh/{folder}/{f_name}.xdmf', fiber)
     gmsh.finalize()
+
+
+def create_ablated_mesh(folder, f_name, og_mesh_name, n, seed, edges, root_dir = '.'):
+    '''
+    Create ablated fiber network, the original fiber network mesh must already exist
+
+    Args:
+        folder: folder to save mesh
+        f_name: mesh name
+        mesh_name: name of original mesh
+        n: n Voronoi seeds
+        seed: random seed to generate voronoi diagram
+        edges: edges to ablate (as a list)
+
+    Returns:
+        None: mesh will be saved to f_name
+    '''
+    #----------Create folder to save mesh--------------------#
+    pathlib.Path(f'{root_dir}/mesh_msh/{folder}').mkdir(parents=True, exist_ok=True)
+    pathlib.Path(f'{root_dir}/mesh/{folder}').mkdir(parents=True, exist_ok=True)
+
+    #---------- Import mesh---------------#
+
+    gmsh.initialize()
+    gmsh.open(og_mesh_name)
+
+    remove_edge = [(1,ii) for ii in edges]
+    print(remove_edge)
+
+    gmsh.model.removePhysicalGroups(remove_edge) # remove edge
+
+    msh = gmsh.model.mesh.generate(dim=1)
+    gmsh.write(f'{root_dir}/mesh_msh/{folder}/{f_name}.msh')
+
+    mesh = meshio.read(f'{root_dir}/mesh_msh/{folder}/{f_name}.msh')
+
+    mesh.points = mesh.points[:, :2] #prune z = 0 for 2D mesh
+        
+    line_cells = np.array([None])
+
+    for cell in mesh.cells:
+        if cell.type == "line":
+            if line_cells.all() == None:
+                line_cells = cell.data
+            else:
+                line_cells = np.concatenate((line_cells,cell.data))
+
+    for key in mesh.cell_data_dict['gmsh:physical'].keys():
+        if key == 'line':
+            line_data = mesh.cell_data_dict['gmsh:physical'][key]        
+    fiber = meshio.Mesh(points=mesh.points, cells={"line": line_cells}, cell_data={'fibers':[line_data]})
+    meshio.write(f'{root_dir}/mesh/{folder}/{f_name}.xdmf', fiber)
+
+    gmsh.finalize()

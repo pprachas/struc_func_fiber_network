@@ -3,6 +3,7 @@ import numpy as np
 from ufl import Jacobian, diag, sign
 import matplotlib.pyplot as plt
 import copy
+import sys
 '''
 This is the main script to fun FEniCS simulations of fiber networks with Simo-Reissner beams with hybrid elements.
 '''
@@ -183,13 +184,22 @@ def postprocess_fiber(num_fibers, stretch, bend, shear, dx, translational = 0.0,
     # compute values per fiber
     if compute_individual:
         for ii in range(num_fibers):
-            stretch_energy.append(assemble(stretch*dx(ii)))
-            bend_energy.append(assemble(bend*dx(ii)))
-            shear_energy.append(assemble(shear*dx(ii)))
+            if assemble(1*dx(ii)) == 0:
+                stretch_energy.append(np.nan)
+                bend_energy.append(np.nan)
+                shear_energy.append(np.nan)
 
-            translational_single.append(assemble(translational*dx(ii)))
-            rotational_single.append(assemble(rotational*dx(ii))/assemble(Constant(1.0)*dx(ii))) # make sure normalized by fiber length
-            curvature_single.append(assemble(curvature*dx(ii)))
+                translational_single.append(np.nan)
+                rotational_single.append(np.nan) # make sure normalized by fiber length
+                curvature_single.append(np.nan)
+            else:
+                stretch_energy.append(assemble(stretch*dx(ii)))
+                bend_energy.append(assemble(bend*dx(ii)))
+                shear_energy.append(assemble(shear*dx(ii)))
+
+                translational_single.append(assemble(translational*dx(ii)))
+                rotational_single.append(assemble(rotational*dx(ii))/assemble(Constant(1.0)*dx(ii))) # make sure normalized by fiber length
+                curvature_single.append(assemble(curvature*dx(ii)))
     
         return stretch_total, bend_total, shear_total, np.array(stretch_energy), np.array(bend_energy), np.array(shear_energy), \
                 translational_total, rotational_total, curvature_total, np.array(translational_single), np.array(rotational_single), np.array(curvature_single)
@@ -1194,3 +1204,5 @@ def run_fea(mesh_name, f_name, r, L, step_size, bc_type, max_strain, init_c0 = N
         np.savetxt(f'{f_name}/curv.txt', np.array(curv_all))
     if residual:
         np.savetxt(f'{f_name}/residual.txt', np.array(residual_all))
+    
+    sys.stdout.flush() # make sure output is flushed

@@ -74,7 +74,6 @@ cont = np.loadtxt(f'{f_root}/cont.txt')
 
 strain=disp/L_0
 
-
 f_crit = f'../phase_diagram/crit_strain/n{n}.txt'
 crit_strain=np.loadtxt(f_crit)[seed][int(sys.argv[3])]
 

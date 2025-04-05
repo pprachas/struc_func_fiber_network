@@ -33,24 +33,23 @@ plt.axis('off')
 pos = nx.get_node_attributes(G,'pos')
 nx.draw_networkx_edges(G,pos, width = 1., edge_color = 'k')
 # Note: the last two nodes are the sources and sinks respectively
-plt.savefig(f'fiber_{n}.pdf')
+plt.savefig(f'fiber_{n}_seed{seed}.pdf')
 
 #--------------Shortest path demo---------------------#
 fig,ax = plt.subplots(figsize=(7,7))
 
 G_boundary = graph.add_boundary_nodes(G.copy(),0,H,W)
 n_nodes = max(list(G.nodes))
-paths = graph.k_shortest_path(G_boundary, n_nodes+1, n_nodes+2, 'dist', n_paths)
+path = nx.shortest_path(G_boundary, n_nodes+1, n_nodes+2, 'dist')
 pos = nx.get_node_attributes(G_boundary,'pos')
 nx.draw_networkx_nodes(G_boundary,pos, node_size = 20, ax=ax, node_color = (0.9,0.5,0.5), nodelist = [len(G),len(G)+1] )
 nx.draw_networkx_edges(G_boundary,pos, width = 1., edge_color = (0.9,0.5,0.5), style = ':')
 nx.draw_networkx_nodes(G,pos, node_size = 10, ax=ax, node_color = 'r')
 nx.draw_networkx_edges(G,pos, width = 1.0, edge_color = '0.5')
 ii=0
-for path in paths:
-    ii+=1
-    path_edges = list(zip(path,path[1:]))
-    nx.draw_networkx_edges(G_boundary,pos, edgelist=path_edges, width = 1.5, edge_color = 'k')
+
+path_edges = list(zip(path,path[1:]))
+nx.draw_networkx_edges(G_boundary,pos, edgelist=path_edges, width = 1.5, edge_color = 'k')
 
 plt.axis('off')
 nodes_elements = [Line2D([0], [0], marker='o', color = 'r', ls = 'None', label='Crosslinks',
@@ -69,8 +68,8 @@ plt.gca().add_artist(nodes)
 plt.savefig('shortest_path_demo.pdf')
 
 
-G.remove_nodes_from(paths[0])
-G_boundary.remove_nodes_from(paths[0][1:-1])
+G.remove_nodes_from(path)
+G_boundary.remove_nodes_from(path[1:-1])
 pos = nx.get_node_attributes(G_boundary,'pos')
 
 fig,ax = plt.subplots(figsize=(7,7))
