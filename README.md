@@ -49,11 +49,17 @@ Note that all the mesh files, results txt files and figures are removed in this 
 
 ## References <a name="reference"></a>
 ```
-@article{prachaseree2025towards,
-  title={Towards understanding structure-function relationships in random fiber networks},
-  author={Prachaseree, Peerasait and Lejeune, Emma},
-  journal={arXiv preprint arXiv:2501.06958},
-  year={2025}
+@article{PRACHASEREE2025106221,
+title = {Towards understanding structure-function relationships in random fiber networks},
+journal = {Journal of the Mechanics and Physics of Solids},
+volume = {203},
+pages = {106221},
+year = {2025},
+issn = {0022-5096},
+doi = {https://doi.org/10.1016/j.jmps.2025.106221},
+url = {https://www.sciencedirect.com/science/article/pii/S0022509625001978},
+author = {Peerasait Prachaseree and Emma Lejeune},
+keywords = {Fiber networks, Force chains, Computational modeling, Spatial graphs, Finite element analysis, Open source software},
 }
 ```
   
